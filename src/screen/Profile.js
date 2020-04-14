@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'
 import { Gravatar } from 'react-native-gravatar'
 import { logout } from '../store/actionsType/actionsUser'
+import HeaderProfile from '../components/HeaderProfile' 
 
 class Profile extends Component {
     logout = () => {
@@ -13,12 +14,9 @@ class Profile extends Component {
         const options = { email : this.props.email, secure: true }
         return(
             <View style={styles.container}>
-                <Gravatar options={options} style={styles.avatar} />
-                <Text style={styles.nickname}>{this.props.name}</Text>
-                <Text style={styles.email}>{this.props.email}</Text>
-                <TouchableOpacity onPress={ this.logout } style={styles.buttom} >
-                    <Text style={styles.buttomText}>Exit</Text>
-                </TouchableOpacity>
+                <HeaderProfile {...this.props}/>
+                <View style={styles.containerFeedProfile}>
+                </View>
             </View>
         )
     }
@@ -28,6 +26,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center'
+    },
+    containerFeedProfile:{
+        flex: 2
     },
     avatar: {
         width: 150,

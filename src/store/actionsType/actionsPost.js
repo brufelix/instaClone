@@ -7,7 +7,7 @@ export const addPost = post => {
         dispatch(creatingPost())
         axios({
             url: 'uploadImage',
-            baseURL: 'baseURLFirebase',
+            baseURL: 'https://us-central1-react-native-clone.cloudfunctions.net',
             method: 'post',
             data: {
                 image: post.image.base64
