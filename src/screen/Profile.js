@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { logout } from '../store/actionsType/actionsUser'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'
 import { Gravatar } from 'react-native-gravatar'
+import { logout } from '../store/actionsType/actionsUser'
 
 class Profile extends Component {
     logout = () => {
