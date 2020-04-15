@@ -4,8 +4,8 @@ const fs = require('fs')
 const uuid = require('uuid-v4')
 const { Storage } = require('@google-cloud/storage')
 const storage = new Storage({
-    projectId: 'react-native-clone',
-    keyFilename: 'react-native-clone-firebase-adminsdk-9ro1f-2907fa2d02.json'
+    projectId: 'projectId',
+    keyFilename: 'keyFilename'
 })
 
 exports.uploadImage = functions.https.onRequest((request, response) => {
@@ -13,7 +13,7 @@ exports.uploadImage = functions.https.onRequest((request, response) => {
       try {
           fs.writeFileSync('/tmp/imageToSave.jpg', request.body.image, 'base64')
 
-          const bucket = storage.bucket('react-native-clone.appspot.com')
+          const bucket = storage.bucket('bucket')
           const id = uuid()
           bucket.upload('/tmp/imageToSave.jpg', {
               uploadType: 'media',
