@@ -1,32 +1,47 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { Gravatar } from 'react-native-gravatar'
 
 const HeaderProfile = props => {
     const options = { email: props.email, secure: true }
     return(
         <View style={styles.container}>
-            <View style={styles.containerAvatar}>
+            <View style={styles.containerHeader}>
                 <Gravatar options={options} style={styles.avatar} />
-                <Text style={styles.textInfo} >Post</Text>
-                <Text style={styles.textInfo} >Followers</Text>
-                <Text style={styles.textInfo} >Followed</Text>
+                <View style={styles.infoFollowers}>
+                    <Text style={styles.textInfo}>Post</Text>
+                    <Text style={styles.textInfo} >0</Text>
+                </View>
+                <View style={styles.infoFollowers}>
+                    <Text style={styles.textInfo}>Followers</Text>
+                    <Text style={styles.textInfo}>0</Text>
+                </View>
+                <View style={styles.infoFollowers}>
+                    <Text style={styles.textInfo}>Followed</Text>
+                    <Text style={styles.textInfo}>0</Text>
+                </View>
             </View>
             <View style={styles.infoUser}>
                 <Text style={styles.textInfo}>{props.name}</Text>
                 <Text style={styles.textInfo}>{props.email}</Text>
             </View>
-        </View>
+                <TouchableOpacity>
+                    <View style={styles.buttomEditProfile}>
+                        <Text style={styles.textInfo}>Editar Perfil</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
         )
 }
 
 const styles = StyleSheet.create({
     container:  {
-        flex: 1,
+        flex: 2,
         width: '100%',
         borderWidth: 1,
-        borderColor: '#222'
-    },containerAvatar:{
+        borderColor: '#e6e6fa'
+    },
+    containerHeader:{
         flex: 1,
         margin: 25,
         flexDirection: 'row', 
@@ -34,15 +49,30 @@ const styles = StyleSheet.create({
     },
     infoUser: {
         flex: 2,
-        marginTop: 30,
+        marginTop: 20,
         marginLeft: 10
     },
+    infoFollowers: {
+        padding: 5, 
+        justifyContent: 'space-between', 
+        alignItems: 'center'
+    },
     textInfo: {
-        fontSize: 20,
+        fontSize: 15,
         fontWeight: 'bold',
         color: '#222'
     },
-    avatar: {}
+    buttomEditProfile: {
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        borderWidth: 1,
+        borderColor: '#d3d3d3',
+        borderRadius: 3, 
+        width: '90%',
+        height: 30,
+        marginLeft: 17,
+        marginBottom: 18,
+    }
 })
 
 export default HeaderProfile
