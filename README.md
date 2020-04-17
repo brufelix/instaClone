@@ -9,7 +9,7 @@ Aplicação móvel similar ao instagram.
 <p>
 <img src="https://github.com/brufelix/instaClone-mobile/blob/master/imageScreen/feed.jpeg" width=200/>
 <img src="https://github.com/brufelix/instaClone-mobile/blob/master/imageScreen/addPhoto.jpeg" width=200/>
-<img src="https://github.com/brufelix/instaClone-mobile/blob/master/imageScreen/profile.jpeg" width=200/>
+<img src="https://github.com/brufelix/instaClone-mobile/blob/master/imageScreen/Profile.png?raw=true" width=200/>
 <p>
 
 - **Tecnologias Utilizadas**
