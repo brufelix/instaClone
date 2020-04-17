@@ -8,16 +8,16 @@ const HeaderProfile = props => {
         <View style={styles.container}>
             <View style={styles.containerHeader}>
                 <Gravatar options={options} style={styles.avatar} />
-                <View style={styles.infoFollowers}>
+                <View style={{padding: 5, justifyContent: 'space-between', alignItems: 'center'}}>
                     <Text style={styles.textInfo}>Post</Text>
-                    <Text style={styles.textInfo} >0</Text>
+                    <Text style={styles.textInfo}>{props.amountFollowers}</Text>
                 </View>
-                <View style={styles.infoFollowers}>
+                <View style={{padding: 5, justifyContent: 'space-between', alignItems: 'center'}}>
                     <Text style={styles.textInfo}>Followers</Text>
                     <Text style={styles.textInfo}>0</Text>
                 </View>
-                <View style={styles.infoFollowers}>
-                    <Text style={styles.textInfo}>Followed</Text>
+                <View style={{padding: 5, justifyContent: 'space-between', alignItems: 'center'}}>
+                    <Text style={styles.textInfo}>Following</Text>
                     <Text style={styles.textInfo}>0</Text>
                 </View>
             </View>
@@ -25,9 +25,9 @@ const HeaderProfile = props => {
                 <Text style={styles.textInfo}>{props.name}</Text>
                 <Text style={styles.textInfo}>{props.email}</Text>
             </View>
-                <TouchableOpacity>
+                <TouchableOpacity >
                     <View style={styles.buttomEditProfile}>
-                        <Text style={styles.textInfo}>Editar Perfil</Text>
+                        <Text>Editar Perfil</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -51,11 +51,6 @@ const styles = StyleSheet.create({
         flex: 2,
         marginTop: 20,
         marginLeft: 10
-    },
-    infoFollowers: {
-        padding: 5, 
-        justifyContent: 'space-between', 
-        alignItems: 'center'
     },
     textInfo: {
         fontSize: 15,
