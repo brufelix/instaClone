@@ -17,5 +17,6 @@ Aplicação móvel similar ao instagram.
   - **_React Native_**
   - **Redux**
   - **_Expo_**
+  - **firebase**
 - **Motivação**
   - Feito para a pratica da linguagem javascript e do framework react.js
